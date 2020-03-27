@@ -29,10 +29,12 @@ set other \
 set images $distro $database $language $web_component $application_platform $other
 
 function download_docker_images
+    set counter 1
     for image in $images
-        echo "[*] Start to download image: $image"
+        echo "[*] Start to download <$counter> image: $image"
         docker pull $image
-        echo -e "[*] Finished download image: $image\n"
+        echo -e "[*] Finished download <$counter> image: $image\n"
+        set counter (math $counter + 1)
     end
 end
 
