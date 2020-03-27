@@ -30,7 +30,9 @@ set images $distro $database $language $web_component $application_platform $oth
 
 function download_docker_images
     for image in $images
+        echo "[*] Start to download image: $image"
         docker pull $image
+        echo -e "[*] Finished download image: $image\n"
     end
 end
 
