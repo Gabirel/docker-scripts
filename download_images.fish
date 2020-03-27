@@ -2,7 +2,7 @@
 
 set distro \
     'alpine' 'amazonlinux' 'busybox' 'centos' 'cirros' 'clearlinux' 'crux' 'debian' 'fedora' \
-    'mageia' 'neurodebian' 'opensuse' 'oraclelinux' 'photon' 'ros' 'sourcemage' 'ubuntu' \
+    'mageia' 'neurodebian' 'opensuse/leap' 'oraclelinux' 'photon' 'ros' 'sourcemage' 'ubuntu' \
     'ubuntu-debootstrp' 'ubuntu-upstart'
 set database \
     'aerospike' 'arangodb' 'cassandra' 'couchbase' 'couchdb' 'crate' 'elasticsearch' 'influxdb' \
@@ -33,7 +33,8 @@ function download_docker_images
     for image in $images
         set time (date +"%m-%d %H:%M:%S")
         echo "[*] $time Start to download <$counter> image: $image"
-        docker pull dockerhub.azk8s.cn/library/$image
+        # docker pull dockerhub.azk8s.cn/library/$image
+        docker pull $image
         set time (date +"%m-%d %H:%M:%S")
         echo -e "[*] $time Finished download <$counter> image: $image\n"
         set counter (math $counter + 1)
