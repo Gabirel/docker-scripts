@@ -31,9 +31,11 @@ set images $distro $database $language $web_component $application_platform $oth
 function download_docker_images
     set counter 1
     for image in $images
-        echo "[*] Start to download <$counter> image: $image"
+        set time (date +"%m-%d %H:%M:%S")
+        echo "[*] $time Start to download <$counter> image: $image"
         docker pull $image
-        echo -e "[*] Finished download <$counter> image: $image\n"
+        set time (date +"%m-%d %H:%M:%S")
+        echo -e "[*] $time Finished download <$counter> image: $image\n"
         set counter (math $counter + 1)
     end
 end
