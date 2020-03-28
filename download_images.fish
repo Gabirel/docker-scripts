@@ -25,7 +25,7 @@ set other \
     'bonita' 'buildpack-deps' 'chronograf' 'composer' 'docker' 'dockercore/docker' 'eggdrop' 'gradle' \
     'ibmcom/voice-gateway-mr' 'ibmcom/voice-gateway-sms' 'ibmcom/voice-gateway-so' \
     'ibmcom/voice-gateway-stt-adapter' 'kaazing-gateway' 'logstash:7.6.1' 'maven' 'registry' 'sentry' \
-    'spiped' 'swarm' 'vault' 'voice-gateway' 'znc'
+    'spiped' 'swarm' 'vault' 'znc'
 
 set images $distro $database $language $web_component $application_platform $other
 
