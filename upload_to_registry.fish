@@ -41,7 +41,7 @@ function upload_images
         # docker pull dockerhub.azk8s.cn/library/$image
         docker tag $image $private_registry_url/$image
         echo -e "[*] Tagging finished\n"
-        docker pull $private_registry_url/$image
+        docker push $private_registry_url/$image
         set time (date +"%m-%d %H:%M:%S")
         echo -e "[*] $time Finished uploading <$counter> image: $image\n"
         set counter (math $counter + 1)
