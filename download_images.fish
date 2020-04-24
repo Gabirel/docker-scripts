@@ -26,8 +26,10 @@ set other \
     'ibmcom/voice-gateway-mr' 'ibmcom/voice-gateway-sms' 'ibmcom/voice-gateway-so' \
     'ibmcom/voice-gateway-stt-adapter' 'kaazing-gateway' 'logstash:7.6.1' 'maven' 'registry' 'sentry' \
     'spiped' 'swarm' 'vault' 'voice-gateway' 'znc'
+set docker_related \
+    'docker' 'registry:2'
 
-set images $distro $database $language $web_component $application_platform $other
+set images $distro $database $language $web_component $application_platform $other $docker_related
 
 function download_docker_images
     set counter 1
